@@ -37,3 +37,14 @@ A list of contributors to the lesson can be found in [AUTHORS](AUTHORS)
 To cite this lesson, please consult with [CITATION](CITATION)
 
 [lesson-example]: https://carpentries.github.io/lesson-example
+
+## Testing
+
+In a bash terminal run
+
+```
+export PATH="$HOME/.gem/ruby/2.5.0/bin:$PATH"
+make serve
+```
+
+This will build the project and start a local server for testing. A URL (default [http://127.0.0.1:4000](http://127.0.0.1:4000)) will be provided for connecting to the server.
