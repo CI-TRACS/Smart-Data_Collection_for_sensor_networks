@@ -26,16 +26,29 @@ Next, click "Terminal" from the drop-down bar.
 
 You should now be brought to a terminal connected to the virtual machine.
 
-> The terminal may open for the first time with a "do you trust this system"-type prompt, simply type "yes" and enter.
+> ### Heads-up!
+> On your first time using a MANA terminal, it will show a "do you trust this system" prompt, simply type "yes" and enter.
 {: .callout}
 
 ![Jupyter Terminal](/fig/jupyter_terminal_start.png)
----
 Now that we have a terminal, it's time to install some python packages!
 
+---
 
+Let's install the `tapipy` package, which includes functions that help us work with the Tapis system.
+Run the following command:
+```bash
+python -m pip install tapipy
+```
 
-#### - `python -m pip install tapipy`
+> #### What this does...
+> This runs python and tells it to execute the "pip" module, then tells pip to install tapipy.
+{: .solution}
+
+![Install Tapipy](/fig/jupyter_terminal_install_tapipy.png)
+
+When it's done, you should see the following:
+![Installed Tapipy](/fig/jupyter_terminal_installed_tapipy.png)
 
 ## Importing Dependencies
 In the notebook, start the first cell out with import statements to allow for interaction with the Tapis API.  
