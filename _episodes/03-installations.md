@@ -50,12 +50,6 @@ python -m pip install tapipy
 When it's done, you should see the following:
 ![Installed Tapipy](/fig/jupyter_terminal_installed_tapipy.png)
 
-## Importing Dependencies
-In the notebook, start the first cell out with import statements to allow for interaction with the Tapis API.  
-```python
-import tapipy
-```
-
 
 {% include links.md %}
 
