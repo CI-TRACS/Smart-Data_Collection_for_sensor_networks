@@ -5,27 +5,50 @@ exercises: 3
 questions:
 - "How do we bring code libraries into our Jupyter notebook?"
 objectives:
-- "Use `conda` to create an environment for our project."
+- "Open the HPC terminal in the browser."
 - "Use `pip` to install python libraries."
 - "Import libraries and test them out in a Jupyter notebook."
 keypoints:
-- "First key point. Brief Answer to questions. (FIXME)"
+- "MANA's web interface provides a terminal for the machine that the notebook runs on."
+- "You can install and import new python libraries to support a notebook."
 ---
 
 # Installing Dependencies
 
-IN CONSTRUCTION
+To install python dependencies, we're going to use the `pip` utility.
 
-environment edits at https://www.hawaii.edu/bwiki/pages/viewpage.action?pageId=744196179
+First we'll want to open a terminal on the node that our notebook is running on.
+To do this, go to the tab where you opened the notebook from, and click "New".
+![Jupyter Home, "New" button selected](/fig/jupyter_home_new_outlined.png) 
 
-#### - `pip install --no-cache-dir jupyterlab scipy pandas matplotlib pandas_bokeh tapipy`
-(taken from tapis-jupyter, will modify as needed)
+Next, click "Terminal" from the drop-down bar.
+![Jupyter Home, "Terminal" button selected](/fig/jupyter_home_new_terminal_outlined.png)
 
-## Importing Dependencies
-In the notebook, start the first cell out with import statements to allow for interaction with the Tapis API.  
-```python
-import tapipy
+You should now be brought to a terminal connected to the virtual machine.
+
+> ### Heads-up!
+> On your first time using a MANA terminal, it will show a "do you trust this system" prompt, simply type "yes" and enter.
+{: .callout}
+
+![Jupyter Terminal](/fig/jupyter_terminal_start.png)
+Now that we have a terminal, it's time to install some python packages!
+
+---
+
+Let's install the `tapipy` package, which includes functions that help us work with the Tapis system.
+Run the following command:
+```bash
+python -m pip install tapipy
 ```
+
+> #### What this does...
+> This runs python and tells it to execute the "pip" module, then tells pip to install tapipy.
+{: .solution}
+
+![Install Tapipy](/fig/jupyter_terminal_install_tapipy.png)
+
+When it's done, you should see the following:
+![Installed Tapipy](/fig/jupyter_terminal_installed_tapipy.png)
 
 
 {% include links.md %}
