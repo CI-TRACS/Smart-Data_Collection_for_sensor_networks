@@ -3,9 +3,10 @@ title: "Introduction"
 teaching: 0
 exercises: 0
 questions:
-- "Key question (FIXME)"
+- "What is Tapis?"
+- "What is the Streams API?"
 objectives:
-- "First learning objective. (FIXME)"
+- "Learn background about the Tapis' Streams API and its organization."
 keypoints:
 - "First key point. Brief Answer to questions. (FIXME)"
 ---
@@ -16,42 +17,111 @@ keypoints:
 
 ## Tapis
 
-Tapis is a National Science Foundation (NSF) funded web-based API framework for securely managing computational workloads across infrastructures and institutions, so that experts can focus on their research instead of the technology needed to accomplish it. As part of work funded by the NSF starting in 2019, Tapis is delivering a version 3 (“V3”) of its platform with several new capabilities, including a multi-site security kernel, streaming data APIs, and high-level support for containerized applications.
+Tapis is a National Science Foundation (NSF) funded web-based API framework for securely managing computational workloads across infrastructures and institutions. The newest iteration, Tapis V3, has several new capabilities, including a multi-site security kernel, streaming data APIs, and high-level support for containerized applications.
 
 Tapis provides FaaS through Abaco, which is based on the actor model of concurrent computation and Docker; users define computational primitives called \textit{actors} with a Docker image, and Abaco assigns each actor a unique URL over which it can receive messages. Users send the actor a message by making an HTTP POST request to the URL. In response to an actor receiving a message, Abaco launches a container from the associated image, injecting the message into the container. Typically, the container execution is asynchronous from the message request, though Abaco does provide an endpoint for sending a message to an actor and blocking until the execution completes, providing synchronous execution semantics. Abaco maintains a queue of messages for each actor, and is capable of launching containers in parallel for a given actor when the actor is registered as \textit{stateless}. The functions run with an authenticated context that allows them to make requests to other Tapis APIs to perform actions such as data transfer or job submission.
 
 ## Streams API
 
-Tapis V3 introduces a Streams API for representing physical sensor networks and streaming and handling reported data. The API provides data-driven event support for real-time datacoming throught the API.
+Tapis V3 introduces a Streams API for representing physical sensor networks and streaming and handling reported data. The API provides data-driven event support for real-time data coming throught the API.
 
 ![Tapis Streams API flowchart](/fig/tapis-v3-streams-api.png)
 
-Organization...
-The API is structured into a hierarchy of 
-
-PROVIDE TABLES WITH THE PROPERTIES FOR EACH OBJECT
+The API is structured into a hierarchy of organizational objects describing the sensor network being represented.
 
 ### Projects
 
-This is the broadest organizational structure available in the Streams API. 
+This is the broadest organizational structure available in the Streams API. This provides information describing the top level project data collection falls under.
+
+| Property                  | Description                                             | Required  |
+| ------------------------- | ------------------------------------------------------- | --------- |
+| project_name              | Project name                                            |   true    |
+| description               | Project description                                     |   false   |
+| owner                     | string: Project owner                                   |   true    |
+| pi                        | string: Project principle investigator (project lead)   |   true    |
+| funding_resource          | string: Funding source of the project                   |   false   |
+| project_url               | string: URL for project online resources                |   false   |
+| active                    | boolean: Current status of the project                  |   false   |
+| metadata                  | Object: Additional metadata for the project             |   false   |
 
 ### Sites
 
+Sites are registered to projects and represent the physical location of the data collection instrumentation.
+
+| Property                  | Description                                             | Required  |
+| ------------------------- | ------------------------------------------------------- | --------- |
+| project_id                | string: ID of the project this site is associated with  |   true    |
+| site_name                 | string: Project Site name                               |   true    |
+| site_id                   | string: Site ID                                         |   false   |
+| description               | string: Site description                                |   true    |
+| latitude                  | number: Site latitude                                   |   true    |
+| longitude                 | number: Site longitude                                  |   true    |
+| elevation                 | number: Site elevation                                  |   true    |
+| metadata                  | Object: Additional metadata for the site                |   false   |
+
 ### Instruments
 
-Instruments represent the physical instruments/sensors available at a given site.
+Instruments represent the physical instruments/sensors available at a given site. This is the hardware performing the data collection being monitored.
+
+| Property                  | Description                                                   | Required  |
+| ------------------------- | ------------------------------------------------------------- | --------- |
+| project_id                | string: ID of the project this instrument is associated with  |   true    |
+| site_id                   | string: ID of the site this instrument is located at          |   true    |
+| inst_name                 | string: Instrument name                                       |   false   |
+| inst_id                   | string: Instrument ID                                         |   false   |
+| inst_description          | string: Instrument description                                |   false   |
+| topic_category_id         | string: Instrument category                                   |   false   |
+| tags                      | string[]: Array of instrument tags                            |   false   |
+| metadata                  | Object: Additional metadata for the isntrument                |   false   |
 
 ### Variables
 
-(registered to the instrument?)
-Instruments will typically record properties of the environment they are placed in and report out these values. For example, a climatological sensor station may record levels of rainfall, air temperature, and relative humidity for its location. These would each be stored as a variable. The variable objects provide metadata for each of these measred properties.
+Instruments will typically record properties of the environment they are placed in and report out these values. For example, a climatological sensor station may record levels of rainfall, air temperature, and relative humidity for its location. These would each be stored as a variable. The variable objects provide metadata for each of these measured properties.
+
+| Property                  | Description                                                     | Required  |
+| ------------------------- | --------------------------------------------------------------- | --------- |
+| project_id                | string: ID of the project this variable is associated with      |   true    |
+| site_id                   | string: ID of the site this variable's instrument is located at |   true    |
+| inst_id                   | string: ID of the instrument this variable is recorded by       |   true    |
+| var_id                    | string: Variable ID                                             |   false   |
+| var_name                  | string: Variable name                                           |   false   |
+| units                     | string: Units variable is measured in                           |   false   |
+| measured_property_id      | string: ID of the property measured by this variable type       |   false   |
+| shortname                 | string: Short name for the variable                             |   false   |
+| metadata                  | Object: Additional metadata for the isntrument                  |   false   |
 
 ### Measurements
 
-The final structure in the Streams API is the actual measurments recorded by the instruments. Measurement objects provide a 
+The final structure in the Streams API is the actual measurments recorded by the instruments. Measurement objects contain all the recorded measurements indexed by variable and the datetime of their recording.
 
-Measurements are registered 
+#### Measurement Creation
 
+| Property                  | Description                                                     | Required  |
+| ------------------------- | --------------------------------------------------------------- | --------- |
+| inst_id                   | string: ID of the instrument this variable is recorded by       |   true    |
+| var_id                    | Measurement[]: Measurment definitions                           |   true    |
+
+#### Measurments Definition Object
+
+```json
+{
+  datetime: string
+  [variable_id: string]: number
+}
+```
+
+#### Measurements Return Object
+
+```json
+{
+  instrument: Instrument
+  site: Site
+  measurments_in_file: number
+  [variable_id: string]: {
+    [datetime: string]: number
+  }
+}
+```
 
 
 ## Abaco Containers
