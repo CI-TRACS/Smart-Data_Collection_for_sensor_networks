@@ -43,13 +43,49 @@ python -m pip install tapipy
 
 > #### What this does...
 > This runs python and tells it to execute the "pip" module, then tells pip to install tapipy.
-{: .solution}
 
 ![Install Tapipy](/fig/jupyter_terminal_install_tapipy.png)
 
 When it's done, you should see the following:
 ![Installed Tapipy](/fig/jupyter_terminal_installed_tapipy.png)
 
+# Getting the Notebook
+
+We're going to use `git` to download the latest version of the Jupyter Notebook for this workshop.
+Git is an application that helps with collaborative software development.
+Its `clone` command allows us to download the entire project folder (called a Repository) in a simple and reproducible manner.
+
+Run the following command:
+```bash
+git clone https://github.com/CI-TRACS/Smart-Data_Collection_for_sensor_networks_notebook.git
+```
+
+![Clone the Tapis Jupyter Repository](/fig/jupyter_terminal_clone_notebook.png)
+
+It will take a few seconds to load, then you should see the following.
+
+![Cloned the Tapis Jupyter Repository](/fig/jupyter_terminal_cloned_notebook.png)
+
+Now, let's get to editing the notebook! 
+
+---
+
+# Editing the Notebook
+Now that we've cloned the notebook repository to the `~/Smart-Data_collection_for_sensor_networks_notebook` directory, it's time to go there and open up the notebook.
+
+
+Go back to the Jupyter Home interface, where you should see a screen like this:
+![Jupyter Home Interface With notebook repo](/fig/jupyter_home_with_notebook.png)
+Click `Smart-Data_Collection_for_sensor_networks_notebook` to enter our newly downloaded folder.
+
+
+
+The new folder includes our notebook, and any other files we will happen to need.
+![Jupyter File Manager in repo](/fig/jupyter_file_manager_in_notebook_repo.png)
+Finally, click the `Smart-Data_Collection_for_sensor_networks.ipynb` file to open our notebook.
+
+
+The notebook should now be open, and ready to edit!
+![Tapis Streams Jupyter Notebook Opened](/fig/notebook_open.png)
 
 {% include links.md %}
-
