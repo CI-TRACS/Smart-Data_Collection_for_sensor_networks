@@ -76,9 +76,9 @@ Go back to the Jupyter Home interface, where you should see a screen like this:
 ![Jupyter Home Interface With tapis-jupyter](/fig/jupyter_home_with_notebook.png)
 Click `tapis-jupyter` to enter our newly downloaded folder.
 
-And finally, click the `Smart-Data_Collection_for_sensor_networks.ipynb` file to open our notebook.
+The new folder includes our notebook, and any other files we will happen to need.
 ![Jupyter File Manager in tapis-jupyter](/fig/jupyter_file_manager_in_notebook_repo.png)
-
+Finally, click the `Smart-Data_Collection_for_sensor_networks.ipynb` file to open our notebook.
 
 
 The notebook should now be open, and ready to edit!
