@@ -67,14 +67,18 @@ It will take a few seconds to load, then you should see the following.
 ![Cloned the Tapis Jupyter Repository](/fig/jupyter_terminal_cloned_notebook.png)
 
 Now, let's get to editing the notebook! 
+
 ---
 
 # Editing the Notebook
 Now that we've cloned the notebook repository to the ~/tapis-jupyter directory, it's time to go there and open up the notebook.
 
+
 Go back to the Jupyter Home interface, where you should see a screen like this:
 ![Jupyter Home Interface With tapis-jupyter](/fig/jupyter_home_with_notebook.png)
 Click `tapis-jupyter` to enter our newly downloaded folder.
+
+
 
 The new folder includes our notebook, and any other files we will happen to need.
 ![Jupyter File Manager in tapis-jupyter](/fig/jupyter_file_manager_in_notebook_repo.png)
