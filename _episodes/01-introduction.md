@@ -1,29 +1,28 @@
 ---
 title: "Introduction"
-teaching: 0
+teaching: 15
 exercises: 0
 questions:
 - "What is Tapis?"
 - "What is the Streams API?"
+- "What is Abaco?"
 objectives:
 - "Learn background about the Tapis' Streams API and its organization."
 keypoints:
-- "First key point. Brief Answer to questions. (FIXME)"
+- "Tapis is an API framework for managing computational workloads."
+- "The Tapis streams API provides organizational structures for representing sensor networks and streaming real time data."
+- "Abaco provides function-as-a-service functionality to Tapis by allowing containerized workflows to be kicked off via messages sent by a client."
 ---
 
 # Streaming Data Collection for Sensor Networks
 
-
-
 ## Tapis
 
-Tapis is a National Science Foundation (NSF) funded web-based API framework for securely managing computational workloads across infrastructures and institutions. The newest iteration, Tapis V3, has several new capabilities, including a multi-site security kernel, streaming data APIs, and high-level support for containerized applications.
-
-Tapis provides FaaS through Abaco, which is based on the actor model of concurrent computation and Docker; users define computational primitives called \textit{actors} with a Docker image, and Abaco assigns each actor a unique URL over which it can receive messages. Users send the actor a message by making an HTTP POST request to the URL. In response to an actor receiving a message, Abaco launches a container from the associated image, injecting the message into the container. Typically, the container execution is asynchronous from the message request, though Abaco does provide an endpoint for sending a message to an actor and blocking until the execution completes, providing synchronous execution semantics. Abaco maintains a queue of messages for each actor, and is capable of launching containers in parallel for a given actor when the actor is registered as \textit{stateless}. The functions run with an authenticated context that allows them to make requests to other Tapis APIs to perform actions such as data transfer or job submission.
+Tapis is a National Science Foundation (NSF) funded web-based API framework for securely managing computational workloads across infrastructures and institutions. The newest iteration, Tapis V3, has several new capabilities, including a multi-site security kernel, streaming data APIs, and high-level support for containerized applications. Tapis provides several APIs for data management and processing. We will be working with the streams API for handling stream style data typical of a sensor network.
 
 ## Streams API
 
-Tapis V3 introduces a Streams API for representing physical sensor networks and streaming and handling reported data. The API provides data-driven event support for real-time data coming throught the API.
+Tapis V3 introduces a Streams API for representing physical sensor networks and streaming and handling reported data. The API provides data-driven event support for real-time data coming through the API.
 
 ![Tapis Streams API flowchart](/fig/tapis-v3-streams-api.png)
 
@@ -99,7 +98,7 @@ The final structure in the Streams API is the actual measurments recorded by the
 | Property                  | Description                                                     | Required  |
 | ------------------------- | --------------------------------------------------------------- | --------- |
 | inst_id                   | string: ID of the instrument this variable is recorded by       |   true    |
-| vars                      | Measurement[]: Measurment definitions                           |   true    |
+| var_id                    | Measurement[]: Measurment definitions                           |   true    |
 
 #### Measurments Definition Object
 
@@ -126,19 +125,8 @@ The final structure in the Streams API is the actual measurments recorded by the
 
 ## Abaco Containers
 
-actor based containers
-need tacc acounts for abaco
+Tapis provides functions-as-a-service (FaaS) through Abaco, which is based on the actor model of concurrent computation and Docker. Users define computational primitives called actors with a Docker image, and Abaco assigns each actor a unique URL over which it can receive messages. Users send the actor a message by making an HTTP POST request to the URL. In response to an actor receiving a message, Abaco launches a container from the associated image, injecting the message into the container. Typically, the container execution is asynchronous from the message request, though Abaco does provide an endpoint for sending a message to an actor and blocking until the execution completes, providing synchronous execution semantics. Abaco maintains a queue of messages for each actor, and is capable of launching containers in parallel for a given actor when the actor is registered as stateless. The functions run with an authenticated context that allows them to make requests to other Tapis APIs to perform actions such as data transfers or job submissions.
 
-Abaco is an NSF-funded web service and distributed computing platform providing functions-as-a-service (FaaS) to the research computing community. Abaco implements functions using the Actor Model of concurrent computation. In Abaco, each actor is associated with a Docker image, and actor containers are executed in response to messages posted to their inbox which itself is given by a URI exposed over HTTP.
+## Streams Event Handling
 
-Abaco will ultimately offer three primary higher-level capabilities on top of the underlying Actor model:
-
-Reactors for event-driven programming
-Asynchronous Executors for scaling out function calls within running applications, and
-Data Adapters for creating rationalized microservices from disparate and heterogeneous sources of data.
-Reactors and Asynchronous Executors are available today while Data Adapters are still under active development.
-
-## Event Handling
-
-send messages to kick off container
-stored as MSG env variable, can be used by container
+The streams API will include the ability to register and kick off Abaco containers when a measurement hits a defined threshold, sending the measurement definition to the container. Messages sent to the container are stored in an environment variable called MSG. This will allow users to automatically receive notifications or start processing tasks for measurements in real time.

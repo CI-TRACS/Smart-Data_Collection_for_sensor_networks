@@ -1,7 +1,7 @@
 ---
 title: "Installations"
-teaching: 3
-exercises: 3
+teaching: 5
+exercises: 5
 questions:
 - "How do we bring code libraries into our Jupyter notebook?"
 objectives:
