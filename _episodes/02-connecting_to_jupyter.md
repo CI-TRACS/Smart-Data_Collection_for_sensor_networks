@@ -43,4 +43,4 @@ Shortly, the job status should change to "Running" indicating the job has been l
 
 ![Jupyter notebook server job running](/fig/job_running.PNG)
 
-The Jupyter notebook server will display the files available in your account's home directory on MANA. We will need to download the notebook file for this workshop and install some dependencies the notebook relies on. The next sectin will describe how to install these dependencies and load the notebook.
+The Jupyter notebook server will display the files available in your account's home directory on MANA. We will need to download the notebook file for this workshop and install some dependencies the notebook relies on. The next section will describe how to install these dependencies and load the notebook.

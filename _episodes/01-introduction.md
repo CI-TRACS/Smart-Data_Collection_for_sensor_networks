@@ -99,11 +99,11 @@ The final structure in the Streams API is the actual measurments recorded by the
 | Property                  | Description                                                     | Required  |
 | ------------------------- | --------------------------------------------------------------- | --------- |
 | inst_id                   | string: ID of the instrument this variable is recorded by       |   true    |
-| var_id                    | Measurement[]: Measurment definitions                           |   true    |
+| vars                      | Measurement[]: Measurment definitions                           |   true    |
 
 #### Measurments Definition Object
 
-```json
+```gibberish
 {
   datetime: string
   [variable_id: string]: number
@@ -112,7 +112,7 @@ The final structure in the Streams API is the actual measurments recorded by the
 
 #### Measurements Return Object
 
-```json
+```gibberish
 {
   instrument: Instrument
   site: Site
@@ -126,4 +126,19 @@ The final structure in the Streams API is the actual measurments recorded by the
 
 ## Abaco Containers
 
+actor based containers
+need tacc acounts for abaco
+
+Abaco is an NSF-funded web service and distributed computing platform providing functions-as-a-service (FaaS) to the research computing community. Abaco implements functions using the Actor Model of concurrent computation. In Abaco, each actor is associated with a Docker image, and actor containers are executed in response to messages posted to their inbox which itself is given by a URI exposed over HTTP.
+
+Abaco will ultimately offer three primary higher-level capabilities on top of the underlying Actor model:
+
+Reactors for event-driven programming
+Asynchronous Executors for scaling out function calls within running applications, and
+Data Adapters for creating rationalized microservices from disparate and heterogeneous sources of data.
+Reactors and Asynchronous Executors are available today while Data Adapters are still under active development.
+
 ## Event Handling
+
+send messages to kick off container
+stored as MSG env variable, can be used by container
