@@ -57,14 +57,14 @@ Its `clone` command allows us to download the entire project folder (called a Re
 
 Run the following command:
 ```bash
-git clone https://github.com/tapis-project/tapis-jupyter.git
+git clone https://github.com/CI-TRACS/Smart-Data_Collection_for_sensor_networks_notebook.git
 ```
 
-![Clone the Tapis Jupyter Repository](/fig/jupyter_terminal_clone_tapis_notebook.png)
+![Clone the Tapis Jupyter Repository](/fig/jupyter_terminal_clone_notebook.png)
 
 It will take a few seconds to load, then you should see the following.
 
-![Cloned the Tapis Jupyter Repository](/fig/jupyter_terminal_cloned_tapis_notebook.png)
+![Cloned the Tapis Jupyter Repository](/fig/jupyter_terminal_cloned_notebook.png)
 
 Now, let's get to editing the notebook! 
 ---
@@ -73,15 +73,15 @@ Now, let's get to editing the notebook!
 Now that we've cloned the notebook repository to the ~/tapis-jupyter directory, it's time to go there and open up the notebook.
 
 Go back to the Jupyter Home interface, where you should see a screen like this:
-![Jupyter Home Interface With tapis-jupyter](/fig/jupyter_home_with_tapis-jupyter.png)
-
+![Jupyter Home Interface With tapis-jupyter](/fig/jupyter_home_with_notebook.png)
 Click `tapis-jupyter` to enter our newly downloaded folder.
-![Jupyter File Manager in tapis-jupyter](/fig/jupyter_file_manager_in_tapis-jupyter.png)
 
-And finally, click the `tapis-streams-notebook.ipynb` file to open our notebook.
-Make sure it's the **streams** notebook and _not_ the one titled `tapis-notebook.ipynb`.
+And finally, click the `Smart-Data_Collection_for_sensor_networks.ipynb` file to open our notebook.
+![Jupyter File Manager in tapis-jupyter](/fig/jupyter_file_manager_in_notebook_repo.png)
+
+
 
 The notebook should now be open, and ready to edit!
-![Tapis Streams Jupyter Notebook Opened](/fig/tapis_streams_notebook_open.png)
+![Tapis Streams Jupyter Notebook Opened](/fig/notebook_open.png)
 
 {% include links.md %}
