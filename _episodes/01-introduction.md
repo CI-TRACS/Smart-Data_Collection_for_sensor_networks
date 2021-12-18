@@ -99,7 +99,7 @@ The final structure in the Streams API is the actual measurments recorded by the
 | Property                  | Description                                                     | Required  |
 | ------------------------- | --------------------------------------------------------------- | --------- |
 | inst_id                   | string: ID of the instrument this variable is recorded by       |   true    |
-| var_id                    | Measurement[]: Measurment definitions                           |   true    |
+| vars                      | Measurement[]: Measurment definitions                           |   true    |
 
 #### Measurments Definition Object
 
