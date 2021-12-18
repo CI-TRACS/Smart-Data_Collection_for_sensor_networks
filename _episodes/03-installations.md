@@ -71,17 +71,17 @@ Now, let's get to editing the notebook!
 ---
 
 # Editing the Notebook
-Now that we've cloned the notebook repository to the ~/tapis-jupyter directory, it's time to go there and open up the notebook.
+Now that we've cloned the notebook repository to the `~/Smart-Data_collection_for_sensor_networks_notebook` directory, it's time to go there and open up the notebook.
 
 
 Go back to the Jupyter Home interface, where you should see a screen like this:
-![Jupyter Home Interface With tapis-jupyter](/fig/jupyter_home_with_notebook.png)
-Click `tapis-jupyter` to enter our newly downloaded folder.
+![Jupyter Home Interface With notebook repo](/fig/jupyter_home_with_notebook.png)
+Click `Smart-Data_Collection_for_sensor_networks_notebook` to enter our newly downloaded folder.
 
 
 
 The new folder includes our notebook, and any other files we will happen to need.
-![Jupyter File Manager in tapis-jupyter](/fig/jupyter_file_manager_in_notebook_repo.png)
+![Jupyter File Manager in repo](/fig/jupyter_file_manager_in_notebook_repo.png)
 Finally, click the `Smart-Data_Collection_for_sensor_networks.ipynb` file to open our notebook.
 
 
