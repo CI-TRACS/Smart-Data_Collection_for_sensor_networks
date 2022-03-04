@@ -23,12 +23,12 @@ At the top of this interface there should be a dropdown menu labeled "Interactiv
 
 ![MANA Interactive job menu](../fig/mana_jupyter.PNG)
 
-We will deploy this job to the sandbox? partition. Most of the default settings for this job should work, but increase the "Number of hours" to 2. These values should be as follows:
+We will deploy this job to the workshop partition. Most of the default settings for this job should work, but increase the "Number of hours" to 2. These values should be as follows:
 
 | Syntax                    | Description |
 | ------------------------- | ----------- |
-| SLURM Account             |             |
-| Partition                 | sandbox?    |
+| SLURM Account             | workshop    |
+| Partition                 | workshop    |
 | Number of hours           | 2           |
 | Number of cores           | 4           |
 | GB of RAM                 | 8           |

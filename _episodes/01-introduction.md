@@ -129,4 +129,4 @@ Tapis provides functions-as-a-service (FaaS) through Abaco, which is based on th
 
 ## Streams Event Handling
 
-The streams API will include the ability to register and kick off Abaco containers when a measurement hits a defined threshold, sending the measurement definition to the container. Messages sent to the container are stored in an environment variable called MSG. This will allow users to automatically receive notifications or start processing tasks for measurements in real time.
+The streams API includes the ability to register and kick off Abaco containers when a measurement hits a defined threshold, sending the measurement definition to the container. Messages sent to the container are stored in an environment variable called MSG. This will allow users to automatically receive notifications or start processing tasks for measurements in real time.
