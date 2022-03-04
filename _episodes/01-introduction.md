@@ -24,7 +24,7 @@ Tapis is a National Science Foundation (NSF) funded web-based API framework for 
 
 Tapis V3 introduces a Streams API for representing physical sensor networks and streaming and handling reported data. The API provides data-driven event support for real-time data coming through the API.
 
-![Tapis Streams API flowchart](/fig/tapis-v3-streams-api.png)
+![Tapis Streams API flowchart](../fig/tapis-v3-streams-api.png)
 
 The API is structured into a hierarchy of organizational objects describing the sensor network being represented.
 
