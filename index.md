@@ -12,9 +12,9 @@ To get the most out of this worskshop attendees should:
 * Have a basic understanding of Jupyter notebook
 
 Presenters Today:
-* Jared McLean - Software Research Engineer - Information Technology Services - Univeristy of Hawaii - System
-* Michael Dodge II - Undergraduate Ike Wai student - Information Technology Services - Univeristy of Hawaii - System
-* Sean Cleveland Ph.D. - Cyberinfrastructure Research Scientist - Information Technology Services - Univeristy of Hawaii - System
+* Jared McLean - Software Research Engineer - Information Technology Services - University of Hawaii - System
+* Michael Dodge II - Undergraduate Ike Wai student - Information Technology Services - University of Hawaii - System
+* Sean Cleveland Ph.D. - Cyberinfrastructure Research Scientist - Information Technology Services - University of Hawaii - System
 
 Funding provided by:
 * RII Track 1: ‘Ike Wai Securing Hawai‘i’s Water Future NSF OIA #1557349, Collaborative Research: SS2-SSI:
