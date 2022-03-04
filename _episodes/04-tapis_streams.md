@@ -3,7 +3,7 @@ title: "Tapis Streams"
 teaching: 15
 exercises: 30
 questions:
-- "How can we use the Streams API to mimick a real-world sensor network."
+- "How can we use the Streams API to mimick a real-world sensor network?"
 objectives:
 - "How to use the Tapis Streams ans Abaco APIs with the python tapipy library."
 keypoints:
