@@ -30,8 +30,8 @@ We will deploy this job to the workshop partition. Most of the default settings 
 | SLURM Account             |             |
 | Partition                 | workshop    |
 | Number of hours           | 2           |
-| Number of cores           | 4           |
-| GB of RAM                 | 8           |
+| Number of cores           | 1           |
+| GB of RAM                 | 6           |
 | Number of GPUs requested  | 0           |
 | GPU Type                  | Any         |
 
