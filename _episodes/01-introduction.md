@@ -127,7 +127,7 @@ The final structure in the Streams API is the actual measurments recorded by the
 
 Tapis provides functions-as-a-service (FaaS) through Abaco, which is based on the actor model of concurrent computation and Docker. Users define computational primitives called actors with a Docker image, and Abaco assigns each actor a unique URL over which it can receive messages. Users send the actor a message by making an HTTP POST request to the URL. In response to an actor receiving a message, Abaco launches a container from the associated image, injecting the message into the container. Typically, the container execution is asynchronous from the message request, though Abaco does provide an endpoint for sending a message to an actor and blocking until the execution completes, providing synchronous execution semantics. Abaco maintains a queue of messages for each actor, and is capable of launching containers in parallel for a given actor when the actor is registered as stateless. The functions run with an authenticated context that allows them to make requests to other Tapis APIs to perform actions such as data transfers or job submissions.
 
-Here is an actor we will use today for generating a plot of some of our mock-sensor data and uploading it to Jetstream Vitrual Machine https://github.com/scleveland/workshop_actor
+Here is an actor we will use today for generating a plot of some of our mock-sensor data and uploading it to Jetstream Virtual Machine https://github.com/scleveland/workshop_actor
 
 ## Streams Event Handling
 
